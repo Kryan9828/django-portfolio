@@ -17,4 +17,17 @@ class Student(models.Model):
     major = models.CharField(max_length=200, choices=Major, blank=True)
     
     def __str__(self):
-        return self.name 
+        return self.name
+
+class Portfolio(models.Model):
+    student = models.OneToOneField(Student, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    contact_email = models.EmailField(max_length=200)
+    is_active = models.BooleanField(default=True)
+    about = models.TextField(blank=True)
+    
+    def __str__(self):
+        return self.title
+    
+
+    
