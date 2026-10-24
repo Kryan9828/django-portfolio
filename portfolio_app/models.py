@@ -8,7 +8,7 @@ class Student(models.Model):
         ("BIGD-BI","BI in Game Design and Development"),
         ("BICS-BI","BI in Computer Science"),
         ("BISC-BI","BI in Computer Security"),
-        ("CSCI-BA","BS in Computer Science"),
+        ("CSCI-BA","BA in Computer Science"),
         ("DASE-BS","BS in Data Analytics and Systems Engineering"),
     )
     
