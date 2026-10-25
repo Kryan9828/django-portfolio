@@ -29,5 +29,14 @@ class Portfolio(models.Model):
     def __str__(self):
         return self.title
     
-
+class Project(models.Model):
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=False)
+    
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return str("Project Detail")
     
