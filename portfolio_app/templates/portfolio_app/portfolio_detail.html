@@ -1,0 +1,31 @@
+{% extends "portfolio_app/base_template.html" %}
+
+{%block content%}
+
+<h2>{{ portfolio.title }}</h2>
+
+<p>About: {{portfolio.about}}</p>
+<p>Email: {{ portfolio.contact_email }}</p>
+<p>Active Status: 
+    {% if portfolio.is_active == True %} Yes 
+    {% else %} No 
+    {% endif %}
+</p>
+
+<p>Projects</p>
+<ul>
+    {% for project in projects %}
+    {% if project.portfolio_id == portfolio.pk%}
+    <li>{{project.title}}</li>
+    {% endif %}
+    {% endfor %}
+</ul>
+<ul>
+    <li>
+        <a href = "{% url 'index' %}">Back to Home</a>
+    </li>
+    <li>
+        <a href = "{% url 'portfolio-list' %}">Back to Portfolios</a>
+    </li>
+</ul>
+{%endblock%}
