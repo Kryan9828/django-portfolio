@@ -15,9 +15,11 @@
 <p>Projects</p>
 <ul>
     {% for project in projects %}
-    {% if project.portfolio_id == portfolio.pk%}
-    <li>{{project.title}}</li>
+    {% if portfolio.pk == project.portfolio_id  %}
+    <li>{{project.title}}: {{project.description}}</li>
     {% endif %}
+    {% empty %}
+    <p>No projects available for student</p>
     {% endfor %}
 </ul>
 <ul>
