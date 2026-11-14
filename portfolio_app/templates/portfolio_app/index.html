@@ -6,15 +6,4 @@
     <li><a href = "{% url 'student-list' %}">Students</a></li>
     <li><a href = "{% url 'portfolio-list' %}">Portfolios</a></li>
 </ul>
-
-{% comment %} <h2>Active Student Portfolios</h2>
-
-<ul>
-    {% for portfolio in active_portfolios%}
-    <li><a href = "{% url 'portfolio-detail' portfolio.pk %}">{{portfolio.title}}</a></li>
-    {% empty %}
-    <li>No active portfolios found</li>
-    {% endfor %}
-</ul> {% endcomment %}
-
 {% endblock %}
