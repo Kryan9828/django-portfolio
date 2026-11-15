@@ -12,6 +12,9 @@
     {% empty %}
         <p>No students found.</p>
     {% endfor %}
+    <li><a href = "{% url 'student-create' %}">Add Student</a></li>
+</ul>
+
 </ul>
 
 <a href = "{% url 'index' %}">Back to Home</a>
