@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy
 from .models import Portfolio
 from .models import Project
@@ -42,5 +43,11 @@ class StudentCreateView(CreateView):
     model = Student
     fields = ['name', 'email', 'major']
     template_name = 'portfolio_app/student_form.html'
+    success_url = reverse_lazy('student-list')
+    
+class StudentUpdateView(UpdateView):
+    model = Student
+    fields = ['name', 'email', 'major']
+    template_name = 'portfolio_app/student_update.html'
     success_url = reverse_lazy('student-list')
     

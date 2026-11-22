@@ -7,5 +7,6 @@ urlpatterns = [
     path('students/<int:pk>/', views.StudentDetailView.as_view(), name = 'student-detail'),
     path('portfolios/', views.PortfolioListView.as_view(), name = 'portfolio-list'),
     path('portfolios/<int:pk>', views.PortfolioDetailView.as_view(), name = 'portfolio-detail'),
-    path('students/create/', views.StudentCreateView.as_view(), name = 'student-create')
+    path('students/create/', views.StudentCreateView.as_view(), name = 'student-create'),
+    path('students/<int:pk>/update/', views.StudentUpdateView.as_view(), name = 'student-update')
 ]
